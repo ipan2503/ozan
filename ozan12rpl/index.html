@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resep Telur Dadar</title>
+</head>
+<body>
+    <h1>Resep Telur Dadar</h1>
+    <p>Ini adalah resep sederhana untuk telur dadar:</p>
+
+    <h2>Pilih Bahan-bahan Tambahan:</h2>
+    <label for="garam">Garam</label>
+    <input type="garam" id="garam" name="garam">
+    <br>
+    <label for="lada">Lada</label>
+    <input type="checkbox" id="lada" name="lada">
+    <br>
+    <label for="bawang">Bawang</label>
+    <input type="bawang" id="bawang" name="bawang">
+    <br>
+    
+    <button onclick="buatTelurDadar()">Buat Telur Dadar</button>
+    
+    <h2>Bahan-bahan yang Anda Pilih:</h2>
+    <p id="bahanDadar"></p>
+
+    <script>
+        alert("selamat mencoba");
+        function buatTelurDadar() {
+            let bahan = "Telur dadar terbuat dari: Telur";
+            
+            if (document.getElementById("garam").checked && document.getElementById("ladax").checked) {
+                bahan += ", Garam, dan Lada";
+            } else if (document.getElementById("garam").checked) {
+                bahan += " dan Garam";
+            } else if (document.getElementById("lada").checked) {
+                bahan += " dan Lada";
+            }
+            
+            if (document.getElementById("bawang").checked) {
+                bahan += " serta Bawang";
+            }
+
+            document.getElementById("bahanDadar").textContent = bahan;
+        }
+    </script>
+</body>
+</html>
+
+<!-- algoritmanya adalah
+1.Mulai
+2.Inisialisasi variabel "bahan" dengan string awal "Telur dadar terbuat dari: Telur".
+3.Cek apakah pengguna memilih "Garam" dengan menggunakan operator logika AND:
+  a. Jika ya, tambahkan ", Garam" ke variabel "bahan".
+4.Cek apakah pengguna memilih "Lada" dengan menggunakan operator logika AND:
+  a. Jika ya, tambahkan ", Lada" ke variabel "bahan".
+5.Cek apakah pengguna memilih "Bawang" dengan menggunakan operator logika OR:
+  a. Jika ya, tambahkan " serta Bawang" ke variabel "bahan".
+6.Tampilkan isi variabel "bahan" ke pengguna.
+7.Selesai. -->
